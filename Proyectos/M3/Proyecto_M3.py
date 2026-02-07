@@ -51,7 +51,7 @@ print ("\n")
 print('Visualización Última fila:')
 print(df.tail(1))
 print ("\n")
-                                # Estadísticas Descriptivas
+# Estadísticas Descriptivas
 media = df['Inversión CLP'].mean()
 print(f'El promedio de las Inversiones realizadas es: {media}')
 mediana = df['Inversión CLP'].median()
@@ -63,7 +63,7 @@ print(f'El máximo de las Inversiones realizadas es: {maximo}')
 moda = df['Ciudad'].mode()[0]
 print(f'La moda para la "Ciudad" es: {moda}')
 #
-                                # Filtro Condicional
+# Filtro Condicional
 condicion = df[(df['Edad'] <= 30) & (df['Inversión CLP'] >= 5000000)]
 print(f'\nLos Clientes menores a 30 años, con inversiones mayores a 5M CLP son: \n{condicion}')
 #
@@ -251,4 +251,5 @@ with pd.ExcelWriter('DataSet.xlsx') as writer:
     DF_v3.to_excel(writer, sheet_name='DataSet_v1', index=False)
     DF_v4.to_excel(writer, sheet_name='DataSet_v2', index=False)
     DF_v5.to_excel(writer, sheet_name='DataSet_v3', index=False)
+#
 #
