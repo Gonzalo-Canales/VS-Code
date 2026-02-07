@@ -219,7 +219,7 @@ Ciudad_edad_promedio = (                                # Agrupamiento para colu
 print(f'\nEl promedio de la Edad para "Co-Ciudadanos" es: \n{Ciudad_edad_promedio}')
 #
 Nombre_compras_totales = (                              # Agrupamiento para columna "Total Compras"
-                          DF_v5.groupby('Nombre').agg({'Total Compras':[min, max, sum]})
+                          DF_v5.groupby('Nombre').agg({'Total Compras':[np.min, np.max, np.sum]})
                          )
 print(f'\nLas métricas: mínimo, máximo, nombre \npara el "Total de Compras" es: \n{Nombre_compras_totales}')
 #
@@ -253,3 +253,4 @@ with pd.ExcelWriter('DataSet.xlsx') as writer:
     DF_v5.to_excel(writer, sheet_name='DataSet_v3', index=False)
 #
 #
+
